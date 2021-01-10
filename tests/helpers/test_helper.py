@@ -14,6 +14,6 @@ class TestHelper:
     @staticmethod
     def list_of_strings():
         """ Returns an array with lots of extreme string cases"""
-        file = "src/test/fixtures/extreme_cases.csv"
+        file = "tests/fixtures/extreme_cases.csv"
         with open(file,'r') as r:
             return [ln.replace('\n', '') for ln in r]

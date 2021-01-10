@@ -3,7 +3,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from src.core import money
+from flaskr.core import money
 
 
 def create_app():
@@ -24,9 +24,12 @@ def create_app():
         except:
             return render_template('index.html', error="Unable to process request", result="")
 
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html'), 404
+
     return app
     
-
 # run the application
 if __name__ == "__main__":
     app = create_app()

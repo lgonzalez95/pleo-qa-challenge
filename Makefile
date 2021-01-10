@@ -1,8 +1,8 @@
 unit:
-	python -m pytest src/test
+	python -m pytest tests/
 
 e2e:
-	pytest tests/e2e
+	python -m pytest e2e/
 
 run:
-	FLASK_APP=src/app.py flask run
+	FLASK_APP=flaskr/app.py python -m flask run

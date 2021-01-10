@@ -1,7 +1,7 @@
 import logging
 import unittest
-from src.core import money
-from src.test.helpers.test_helper import TestHelper
+from flaskr.core import money
+from tests.helpers.test_helper import TestHelper
 
 logging.basicConfig(filename='logging.log',level=logging.DEBUG)
 
