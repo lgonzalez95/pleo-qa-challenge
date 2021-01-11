@@ -3,5 +3,5 @@ load_dotenv()
 
 import os
 
-# configuration
+# configuration details
 BASE_URL = os.getenv("BASE_URL")

@@ -1,6 +1,6 @@
 # Function that parses the Money value to an float
 
-def format_money(value_to_parse) -> float:
+def format_money(value_to_parse) -> str:
     """
     Format money is a function that formats the string to a string with numeric separators
     i.e. 10000.00 to 10,000.00

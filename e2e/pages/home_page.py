@@ -11,7 +11,7 @@ txt_money = "#money"
 
 # page actions
 class HomePage(BasePage):
-    def __init__(self, page, base_url):
+    def __init__(self, page, base_url) -> None:
         BasePage.__init__(self, page, base_url)
 
     def go_to(self) -> None:

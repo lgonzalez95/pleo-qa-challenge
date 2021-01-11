@@ -10,11 +10,11 @@ txt_money = "#money"
 
 # page actions
 class BasePage:
-    def __init__(self, page, base_url):
+    def __init__(self, page, base_url) -> None:
         self.page = page
         self.base_url = base_url
 
-    def go_to(self, url):
+    def go_to(self, url) -> None:
         self.page.goto(url)
 
     def get_title(self) -> str:
