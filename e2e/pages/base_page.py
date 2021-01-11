@@ -1,12 +1,7 @@
+"""
+BasePage defines common pages methods
+"""
 
-
-# page locators
-btn_submit = '#submit'
-h1_title= 'h1'
-h2_title= 'h2'
-lbl_result = "#result"
-lbl_message = '.result-message'
-txt_money = "#money"
 
 # page actions
 class BasePage:
@@ -19,4 +14,7 @@ class BasePage:
 
     def get_title(self) -> str:
         return self.page.title()
+
+    def get_url(self) -> str:
+        return self.page.url
 

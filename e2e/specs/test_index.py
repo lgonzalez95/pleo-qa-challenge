@@ -30,6 +30,8 @@ def test_wrong_text_format(page):
 
     home_page.format_text("wrong_text")
     
+    # validate url and returned value
+    assert "?money=" in home_page.get_url()
     assert home_page.get_result_text() == "{wrong value}"
 
 def test_correct_int_text_format(page):
@@ -38,6 +40,8 @@ def test_correct_int_text_format(page):
 
     home_page.format_text("112321312")
     
+    # validate url and returned value
+    assert "?money=" in home_page.get_url()
     assert home_page.get_result_text() == "112 321 312.00"
 
 
@@ -46,5 +50,16 @@ def test_correct_decimal_text_format(page):
     home_page.go_to()
     home_page.format_text("112321312.23")
     
+    # validate url and returned value
+    assert "?money=" in home_page.get_url()
     assert home_page.get_result_text() == "112 321 312.23"
+
+def test_mandatory_fields(page):
+    home_page = HomePage(page, BASE_URL)
+    home_page.go_to()
+    home_page.format_text("")
+    
+    # validate url and returned value
+    assert home_page.get_result_text() == "{wrong value}"
+    assert not "?money=" in home_page.get_url()
 
