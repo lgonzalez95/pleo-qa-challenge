@@ -11,13 +11,13 @@ txt_money = "#money"
 
 # page actions
 class HomePage(BasePage):
-    def __init__(self, page, base_url) -> None:
+    def __init__(self, page, base_url:str) -> None:
         BasePage.__init__(self, page, base_url)
 
     def go_to(self) -> None:
         BasePage.go_to(self, f'{self.base_url}/')
 
-    def format_text(self, money_text) -> None:
+    def format_text(self, money_text: str) -> None:
         self.page.type(txt_money, money_text)
         self.click_submit()
     

@@ -7,7 +7,7 @@ h2_title= 'h2'
 
 # page actions
 class NotFoundPage(BasePage):
-    def __init__(self, page, base_url):
+    def __init__(self, page, base_url: str) -> None:
         BasePage.__init__(self, page, base_url)
 
     def go_to(self) -> None:
