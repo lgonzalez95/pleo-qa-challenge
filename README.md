@@ -15,6 +15,8 @@ formatMoney(1600); // '1 600.00'
 
 ## My approach
 
+Time to complete: 8-10hours
+
 I decided to take this challenge as a `real life use case` - in other words if I were hired to develop and test the solution I would do exactly the same code as I am delivering for this challenge.
 
 Despite the fact that I was encouraged and tempted to use Kotlin or Typescript I decided to code my solution on Python3 cause I feel more comfortable with it. I wanted to demonstrate solid testing principles and a good testing strategy and I didn't want time or technology to hold me back, so I developed in the language I could spent less time researching and more time developing.
