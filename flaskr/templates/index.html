@@ -14,15 +14,15 @@
 
 <body>
     <div class="container">
-        <h1>Money Formatter 2020</h1>
+        <h1>Money Formatter 2021</h1>
         <h2>If the value is not parse properly the system returns: {wrong value}</h2>
         <form role="form" method='GET' action='/'>
             <div class="form-group">
                 <input type="text" name="money" class="form-control" id="money" placeholder="Enter the value to format"
                     style="max-width: 300px;" autofocus required>
-                <p>The formatted value is: <strong id="result">{{result}}</strong></p>
+                <p class="result-message">The formatted value is: <strong id="result">{{result}}</strong></p>
             </div>
-            <button type="submit" id="submit" class="btn btn-default">Submit</button>
+            <button type="submit" id="submit" class="btn btn-default">Format</button>
         </form>
         <br>
         {% if error %}

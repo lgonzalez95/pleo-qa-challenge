@@ -5,7 +5,6 @@ from flask import render_template
 from flask import request
 from flaskr.core import money
 
-
 def create_app():
     # creates a Flask application, named app
     app = Flask(__name__)

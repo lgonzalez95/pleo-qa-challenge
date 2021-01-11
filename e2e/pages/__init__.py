@@ -1,0 +1,1 @@
+from e2e.pages.home_page import HomePage
