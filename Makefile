@@ -1,5 +1,5 @@
 tests-unit:
-	python -m pytest tests --html=unit-report.html --self-contained-html
+	python -m pytest tests --html=unit-report.html --self-contained-html --cov=flaskr
 
 tests-e2e: 
 	python -m pytest e2e --html=unit-report.html --self-contained-html
