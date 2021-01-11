@@ -21,6 +21,11 @@ jobs:
     - name: Test with pytest
       run: |
         make tests-unit
+    - name: Archive test results file
+      uses: actions/upload-artifact@v2
+      with:
+        name: unit-tests-result
+        path: unit-report.html.html
 
   e2e-tests:
     runs-on: ubuntu-latest
@@ -34,7 +39,12 @@ jobs:
         pip install -r requirements.txt
     - name: Spin webapp
       run: |
-        FLASK_RUN_PORT=8080 make run
+        FLASK_RUN_PORT=8080 make run &
     - name: Test with pytest
       run: |
         BASE_URL="http://localhost:8080" make tests-e2e
+    - name: Archive test results file
+      uses: actions/upload-artifact@v2
+      with:
+        name: e2e-tests-result
+        path: e2e-report.html.html
