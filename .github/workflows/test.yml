@@ -25,13 +25,13 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: unit-tests-result
-        path: unit-report.html.html
+        path: unit-report.html
 
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run box version
+    - name: Run PW ready docker image
       uses: docker://echowuhao/pywright
     - name: Install dependencies
       run: |
@@ -48,4 +48,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: e2e-tests-result
-        path: e2e-report.html.html
+        path: e2e-report.html
