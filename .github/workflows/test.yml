@@ -21,19 +21,31 @@ jobs:
     - name: Test with pytest
       run: |
         make tests-unit
+    - name: Archive test results file
+      uses: actions/upload-artifact@v2
+      with:
+        name: unit-tests-result
+        path: unit-report.html
 
   e2e-tests:
     runs-on: ubuntu-latest
-    container:
-      image: echowuhao/pywright
-    steps: 
+    steps:
     - uses: actions/checkout@v2
+    - name: Run PW ready docker image
+      uses: docker://echowuhao/pywright
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Install playwright
-        make pw-dependencies
+        python -m playwright install
+    - name: Spin webapp
+      run: |
+        FLASK_RUN_PORT=8080 make run &
     - name: Test with pytest
       run: |
-        make tests-unit
+        BASE_URL="http://localhost:8080" make tests-e2e
+    - name: Archive test results file
+      uses: actions/upload-artifact@v2
+      with:
+        name: e2e-tests-result
+        path: e2e-report.html
