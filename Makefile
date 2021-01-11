@@ -7,5 +7,8 @@ tests-e2e:
 tests-e2e-headful: 
 	python -m pytest e2e --headful --html=unit-report.html --self-contained-html
 
+pw-dependencies:
+	python -m playwright install
+
 run:
 	FLASK_APP=flaskr/app.py python -m flask run
