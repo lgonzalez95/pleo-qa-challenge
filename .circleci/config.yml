@@ -14,8 +14,21 @@ jobs:
       - run:
           command: make tests-unit
           name: Test
+  e2e-tests:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          command: pip install -r requirements.txt
+      - run:
+          command: make pw-dependencies
+      - run:
+          command: make run &
+      - run:
+          command: sleep 3 && make tests-e2e
 
 workflows:
   main:
     jobs:
       - build-and-test
+      - e2e-tests
