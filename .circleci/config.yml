@@ -24,9 +24,10 @@ jobs:
       - run:
           command: make pw-dependencies
       - run:
-          command: make run &
+          command: make run
+          background: true
       - run:
-          command: sleep 3 && make tests-e2e
+          command: sleep 10 && make tests-e2e
 
 workflows:
   main:
