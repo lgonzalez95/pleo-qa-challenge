@@ -28,6 +28,9 @@ jobs:
           background: true
       - run:
           command: sleep 10 && make tests-e2e
+      - store_artifacts:
+          path: e2e-report.html
+          name: UnitTestRepor
 
 workflows:
   main:
