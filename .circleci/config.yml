@@ -15,7 +15,8 @@ jobs:
           command: make tests-unit
           name: Test
   e2e-tests:
-    executor: python/default
+    docker:
+      - image: echowuhao/pywright
     steps:
       - checkout
       - run:
