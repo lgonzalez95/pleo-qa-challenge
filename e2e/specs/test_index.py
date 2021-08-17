@@ -1,7 +1,8 @@
 from e2e.pages import HomePage
 from e2e.settings import BASE_URL
+from playwright.sync_api import Page
 
-def test_home_page_initial_design(page):
+def test_home_page_initial_design(page: Page):
     home_page = HomePage(page, BASE_URL)
 
     home_page.go_to()

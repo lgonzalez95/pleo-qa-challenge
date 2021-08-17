@@ -29,22 +29,22 @@ class HomePage(BasePage):
         self.page.click(btn_submit)
 
     def get_title_text(self) -> str:
-        return self.page.innerText(h1_title)
+        return self.page.inner_text(h1_title)
     
     def get_sub_title_text(self) -> str:
-        return self.page.innerText(h2_title)
+        return self.page.inner_text(h2_title)
 
     def get_message_text(self) -> str:
-        return self.page.innerText(lbl_message)
+        return self.page.inner_text(lbl_message)
 
     def get_submit_type(self) -> str:
-        return self.page.getAttribute(btn_submit, "type")
+        return self.page.get_attribute(btn_submit, "type")
 
     def get_result_text(self) -> str:
-        return self.page.innerText(lbl_result)
+        return self.page.inner_text(lbl_result)
 
     def get_submit_text(self) -> str:
-        return self.page.innerText(btn_submit)
+        return self.page.inner_text(btn_submit)
 
         
 

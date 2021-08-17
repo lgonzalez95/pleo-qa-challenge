@@ -16,10 +16,10 @@ class NotFoundPage(BasePage):
     
     # single element attributes/actions
     def get_title_text(self) -> str:
-        return self.page.innerText(h1_title)
+        return self.page.inner_text(h1_title)
     
     def get_sub_title_text(self) -> str:
-        return self.page.innerText(h2_title)
+        return self.page.inner_text(h2_title)
 
     
 
